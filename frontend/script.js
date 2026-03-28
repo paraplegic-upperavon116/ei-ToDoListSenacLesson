@@ -10,26 +10,35 @@ const tasksContainer = document.querySelector(".tasks");
 // ESTADO
 // ===============================
 let tasks = [];
-
+let currentFilter = "todas"
 
 // ===============================
 // 🎯 DESAFIO 8 (JS)
 // 👉 Criar função addTask()
 // ===============================
 function addTask() {
+    // trim() remove espaços no início e fim
+    const text = input.value.trim();
 
-    // 1. pegar valor do input
+    // Evita adicionar tarefas vazias
+    if (text === "") return;
 
-    // 2. validar vazio
+    // Criamos um objeto para representar a tarefa
+    // Teoria: objetos são estruturas chave-valor
+    const task = {
+        id: Date.now(), // gera um ID único baseado no tempo
+        text: text,
+        completed: false // estado inicial
+    };
 
-    // 3. criar objeto tarefa
-    // dica: { id, text, completed }
+    // Adiciona a tarefa no array (imutabilidade não é usada aqui)
+    tasks.push(task);
 
-    // 4. adicionar no array
+    // Limpa o input
+    input.value = "";
 
-    // 5. limpar input
-
-    // 6. chamar renderTasks()
+    // Atualiza a interface
+    renderTasks();
 }
 
 

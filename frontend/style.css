@@ -1,100 +1,305 @@
-/* ===============================
-   RESET (PRONTO)
-=============================== */
+/* ===================================
+   RESET GERAL
+   Remove estilos padrão do navegador
+   e define configurações globais
+=================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* Fonte do projeto (importada do Google Fonts) */
     font-family: 'Roboto Mono', monospace;
 }
 
-/* ===============================
-   🎯 DESAFIO 2 (CSS)
-   👉 Criar variáveis de cor
-=============================== */
+
+/* ===================================
+   VARIÁVEIS (CORES DO PROJETO)
+=================================== */
 :root {
-    /* TODO: criar cores do projeto */
+    --primary: #6c5cff;
+    --secondary: #8a2be2;
+    --accent: #00c9a7;
+    --bg-light: #f6f7fb;
+    --text-dark: #525252;
+    --text-light: #777;
+    --white: #ffffff;
 }
 
-/* ===============================
-   BODY (PRONTO)
-=============================== */
+
+/* ===================================
+   BODY
+=================================== */
 body {
+    background: linear-gradient(135deg, #6c5cff, #8a2be2);
+
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    align-items: flex-start;
 
-    /* TODO: adicionar background bonito */
+    padding: 40px 20px;
 }
 
-/* ===============================
-   CONTAINER (BASE PRONTA)
-=============================== */
+
+/* ===================================
+   CONTAINER
+=================================== */
 .container {
     width: 100%;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 700px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+    padding: 25px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* ===============================
-   🎯 DESAFIO 3 (CSS)
-   👉 Estilizar HEADER
-=============================== */
+
+/* ===================================
+   HEADER
+=================================== */
 .header {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-/* ===============================
-   🎯 DESAFIO 4 (CSS)
-   👉 Criar layout dos CARDS
-=============================== */
+.header h1 {
+    font-size: 32px;
+    color: var(--white);
+}
+
+.header p {
+    color: rgba(255,255,255,0.8);
+    margin-top: 8px;
+}
+
+
+/* ===================================
+   CARDS
+=================================== */
 .stats {
-    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-/* ===============================
-   ADD TASK (BASE)
-=============================== */
+.card {
+    flex: 1;
+    min-width: 100px;
+
+    /* Fundo roxo transparente (glass) */
+    background: rgba(108, 92, 255, 0.15);
+
+    /* Efeito vidro */
+    backdrop-filter: blur(10px);
+
+    border-radius: 16px;
+    padding: 20px;
+
+    text-align: center;
+
+    /* Borda sutil */
+    border: 1px solid rgba(255,255,255,0.2);
+
+    /* Sombra mais suave */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+
+    transition: all 0.25s ease;
+}
+
+/* Hover moderno */
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+
+    /* Cor levemente diferente no hover */
+    background: rgba(138, 43, 226, 0.25);
+
+    /* Glow sutil */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.number {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.number.blue {
+    color: var(--white);
+}
+
+.number.green {
+    color: var(--accent);
+}
+
+.label {
+    display: block;
+    margin-top: 5px;
+    color: rgba(255,255,255,0.7);
+}
+
+
+/* ===================================
+   ADD TASK
+=================================== */
 .add-task {
     display: flex;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .add-task input {
     flex: 1;
-    padding: 10px;
+
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+
+    font-size: 14px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    outline: none;
 }
 
 .btn-add {
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: var(--white);
+    font-weight: bold;
+
     cursor: pointer;
+
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+
+    transition: transform 0.2s, opacity 0.2s;
 }
 
-/* ===============================
-   🎯 DESAFIO 5 (CSS)
-   👉 Estilizar filtros
-=============================== */
+.btn-add:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* ===================================
+   FILTERS (CORRIGIDO)
+=================================== */
 .filters {
-    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-/* ===============================
-   🎯 DESAFIO 6 (CSS)
-   👉 Estilizar tarefas
-=============================== */
+.filter {
+    padding: 10px 16px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    cursor: pointer;
+
+    background: rgba(108, 92, 255, 0.15);
+    backdrop-filter: blur(8px);
+
+    color: rgba(255,255,255,0.8);
+
+    transition: all 0.25s ease;
+}
+
+/* ✅ HOVER INDIVIDUAL (cada botão) */
+.filter:hover {
+    background: rgba(138, 43, 226, 0.3);
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* ✅ BOTÃO ATIVO CORRETO */
+.filter.active {
+    background: rgba(108, 92, 255, 0.4);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.075);
+
+    transform: scale(1.05);
+}
+
+
+/* ===================================
+   TASKS
+=================================== */
 .tasks {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+
+.task,
+.task-completed {
+    background: rgba(108, 92, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    padding: 16px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
     gap: 10px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    transition: 0.2s;
 }
 
-.task {
-    padding: 10px;
-    border: 1px solid #ccc;
+.task:hover {
+    transform: translateX(5px);
+    background: rgba(108, 92, 255, 0.25);
 }
 
-/* Classe importante (JS usa!) */
-.completed {
+.task span {
+    font-size: 15px;
+    color: var(--white);
+}
+
+.task-completed span,
+.task.completed span {
     text-decoration: line-through;
-    opacity: 0.6;
+    color: rgba(255,255,255,0.6);
+}
+
+
+/* ===================================
+   RESPONSIVIDADE
+=================================== */
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .add-task {
+        flex-direction: column;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
 }
